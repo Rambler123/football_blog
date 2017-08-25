@@ -19,11 +19,6 @@ use yii\grid\GridView;
 $query=Post::find()->filterWhere(['=', 'id', $_GET['showid']])->all();
 $this->title = HtmlPurifier::process($query[0]->title);
 $this->params['breadcrumbs'][] = $this->title;
-$this->registerMetaTag([
-    'name' => 'Keywords',
-    'content' => HtmlPurifier::process($query[0]->tags),
-]);
-
 ?>
 <div class="ShowPost">
 
